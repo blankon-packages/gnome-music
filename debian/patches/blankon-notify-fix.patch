@@ -1,0 +1,24 @@
+diff --git a/gnomemusic/notification.py b/gnomemusic/notification.py
+index 7af5e8a..fcbbac4 100644
+--- a/gnomemusic/notification.py
++++ b/gnomemusic/notification.py
+@@ -128,15 +128,15 @@ class NotificationManager:
+                 postfix = ''
+ 
+             self._notification.add_action('media-skip-backward%s' % postfix, _("Previous"),
+-                                          self._go_previous, None)
++                                          self._go_previous, None, None)
+             if playing:
+                 self._notification.add_action('media-playback-pause', _("Pause"),
+-                                              self._pause, None)
++                                              self._pause, None, None)
+             else:
+                 self._notification.add_action('media-playback-start%s' % postfix, _("Play"),
+-                                              self._play, None)
++                                              self._play, None, None)
+             self._notification.add_action('media-skip-forward%s' % postfix, _("Next"),
+-                                          self._go_next, None)
++                                          self._go_next, None, None)
+ 
+     def _go_previous(self, notification, action, data):
+         self._player.play_previous()
